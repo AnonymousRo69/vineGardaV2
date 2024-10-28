@@ -78,66 +78,66 @@ function App() {
   };
   return (
     <div>
-      {ShowLogin ? (
-        <div
-          className="login"
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "start",
-          }}
-        >
-          <button
-            onClick={() => {
-              setShowLogin(false);
-            }}
-          >
-            X
-          </button>
-          <div
-            style={{
-              paddingBottom: "20px",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width: "100%",
-            }}
-          >
-            <h1 className="logintitle">Login</h1>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                justifyContent: "center",
-                alignItems: "center",
-              }}
-            >
-              <input
-                style={{ width: "80%" }}
-                type="password"
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                }}
-              />
-              <button
-                className="button"
-                onClick={() => {
-                  addToDatabase();
-                }}
-              >
-                Adauga
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : (
-        ""
-      )}
       <div
         className="card animate"
         style={{ backgroundColor: Background, padding: "20px" }}
       >
+        {ShowLogin ? (
+          <div
+            className="login"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "start",
+            }}
+          >
+            <button
+              onClick={() => {
+                setShowLogin(false);
+              }}
+            >
+              X
+            </button>
+            <div
+              style={{
+                paddingBottom: "20px",
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+              }}
+            >
+              <h1 className="logintitle">Login</h1>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <input
+                  style={{ width: "80%" }}
+                  type="password"
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                  }}
+                />
+                <button
+                  className="button"
+                  onClick={() => {
+                    addToDatabase();
+                  }}
+                >
+                  Adauga
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          ""
+        )}
         <h1 className="title">Vine Garda?</h1>
         <input
           onAnimationEnd={() => {
