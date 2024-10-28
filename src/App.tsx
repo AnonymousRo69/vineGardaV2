@@ -24,7 +24,7 @@ function App() {
   // }, []);
   const checkInputInDatabase = async () => {
     await GetDatabase();
-    const isFound = Database.includes(Input); // Check if input exists in database
+    const isFound = Database.includes(Input.toLowerCase()); // Check if input exists in database
     setFound(isFound);
     console.log(isFound);
   };
