@@ -1,0 +1,55 @@
+*{
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.card{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  height: 30vh;
+  box-shadow: 2px 2px 10px rgba(255, 255, 255,0.2);
+  border-radius: 100px;
+}
+.card div,h1,input,button{
+  color:white;
+  font-family:"Montserrat",sans-serif ;
+  margin-top: 20px;
+
+}
+.card button{
+  font-size: 20px;
+  background-color: #242424;
+  border: solid;
+  border-color: rgba(0,0,0,0.2);
+  border-top-right-radius: 10px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  box-shadow: 0px 0px 10px rgb(0,0,0);
+}
+.card button:active{
+  background-color: rgba(0,0,0,0.4);
+}
+.title{
+  
+  font-size: 60px;
+  color: white;
+  text-shadow: 2px 2px 10px rgba(255, 255, 255,0.2) ;
+}
+input{
+  border: solid;
+  border-color: rgba(0,0,0,0.2);
+  outline: #242424;
+  background-color: #242424;
+  border-top-right-radius: 10px;
+  border-top-left-radius:10px;
+  border-bottom-left-radius:10px;
+  border-bottom-right-radius:10px;
+  font-size: 20px;
+  font-family:"Montserrat",sans-serif ;
+  text-align: center;
+  box-shadow: 0px 0px 10px rgb(0,0,0);
+}
