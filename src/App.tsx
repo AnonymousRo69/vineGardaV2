@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function App() {
   let [Input, setInput] = useState("");
@@ -18,18 +18,20 @@ function App() {
         "https://bazadedatepd.up.railway.app/database"
       );
       if (response.ok) {
-        const data = await response.json(); // Parse the response body as JSON
-        setDatabase(data); // Update the state with the parsed data // Log the data for debugging
+        const data = await response.json();
+        setDatabase(data);
       }
     } catch (error) {}
   }
-  // useEffect(() => {
-  //   GetDatabase();
-  // }, []);
+  useEffect(() => {
+    GetDatabase();
+  }, []);
   const checkInputInDatabase = async () => {
     if (Input) {
       await GetDatabase();
-      const isFound = Database.includes(Input.toLowerCase());
+      console.log(Database);
+      let isFound = Database.includes(Input.toLowerCase());
+      console.log(await isFound);
       if (isFound) {
         setFeedBack("Numarul de Imatriculare apartine unui Politist");
       } else {
