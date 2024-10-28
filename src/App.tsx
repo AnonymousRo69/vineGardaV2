@@ -2,7 +2,6 @@ import "./App.css";
 import { useState } from "react";
 
 function App() {
-  let [Background, setBackground] = useState("#242424");
   let [Input, setInput] = useState("");
   let [Database, setDatabase] = useState<string[]>([]);
   let [FeedBack, setFeedBack] = useState<string>(
@@ -58,6 +57,9 @@ function App() {
           return;
         case 403:
           setLoginFeedBack("Parola Incorecta");
+          setTimeout(() => {
+            setLoginFeedBack("Introdu parola");
+          }, 2500);
           return;
         case 409:
           setShowLogin(false);
@@ -78,10 +80,7 @@ function App() {
   };
   return (
     <div>
-      <div
-        className="card animate"
-        style={{ backgroundColor: Background, padding: "20px" }}
-      >
+      <div className="card" style={{ padding: "20px" }}>
         {ShowLogin ? (
           <div
             className="login"
@@ -142,9 +141,6 @@ function App() {
         )}
         <h1 className="title">Vine Garda?</h1>
         <input
-          onAnimationEnd={() => {
-            setBackground("");
-          }}
           type="text"
           name="numar"
           id="numar"

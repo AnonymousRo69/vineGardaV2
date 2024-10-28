@@ -125,3 +125,7 @@ input{
   margin-top: 0px;
   margin-left:0px;
 }
+.Buttons button{
+  margin-left: 10px;
+  margin-right: 10px;
+}
