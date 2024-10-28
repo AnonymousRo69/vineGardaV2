@@ -35,6 +35,12 @@ function App() {
       } else {
         setFeedBack("Numarul nu se afla in baza de date");
       }
+    } else {
+      setFeedBack("Numarul nu este Valid");
+      setTimeout(() => {
+        setFeedBack("Introdu un Numar de Imatriculare");
+      }, 2500);
+      return;
     }
   };
   const addToDatabase = async () => {
