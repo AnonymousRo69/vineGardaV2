@@ -1,11 +1,11 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function App() {
   let [Input, setInput] = useState("");
   let [Database, setDatabase] = useState<string[]>([]);
   let [Found, setFound] = useState<null | boolean>(null);
-  let [Alive, setAlive] = useState<null | boolean>(null);
+  // let [Alive, setAlive] = useState<null | boolean>(null);
 
   async function GetDatabase() {
     try {
@@ -15,14 +15,15 @@ function App() {
       if (response.ok) {
         const data = await response.json(); // Parse the response body as JSON
         setDatabase(data); // Update the state with the parsed data
-        console.log(response.status); // Log the data for debugging
+        console.log(`Response Status: ${response.status}`); // Log the data for debugging
       }
     } catch (error) {}
   }
-  useEffect(() => {
-    GetDatabase();
-  }, []);
-  const checkInputInDatabase = () => {
+  // useEffect(() => {
+  //   GetDatabase();
+  // }, []);
+  const checkInputInDatabase = async () => {
+    await GetDatabase();
     const isFound = Database.includes(Input); // Check if input exists in database
     setFound(isFound);
     console.log(isFound);
