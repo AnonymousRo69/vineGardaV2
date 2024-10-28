@@ -96,9 +96,9 @@ input{
   margin: 10px;
 }
 .login button{
-
+  
   border:none;
-  border-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0.2);
   margin: 0px;
   margin-top: 10px;
   margin-left: 10px;
@@ -110,6 +110,7 @@ input{
 
 }
 .button{
+  margin: left 0px;;
   font-size: 20px;
   background-color: #242424;
   border: solid;
@@ -119,4 +120,8 @@ input{
   border-bottom-left-radius:10px;
   border-bottom-right-radius:10px;
   box-shadow: 0px 0px 10px rgb(0,0,0);
+}
+#loginAdauga{
+  margin-top: 0px;
+  margin-left:0px;
 }

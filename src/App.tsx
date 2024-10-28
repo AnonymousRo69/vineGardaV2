@@ -8,6 +8,7 @@ function App() {
   let [FeedBack, setFeedBack] = useState<string>(
     "Introdu un Numar de Imatriculare"
   );
+  let [LoginFeedBack, setLoginFeedBack] = useState("Introdu parola");
   let [ShowLogin, setShowLogin] = useState(false);
   let [Password, setPassword] = useState("");
   // let [Alive, setAlive] = useState<null | boolean>(null);
@@ -56,18 +57,17 @@ function App() {
           }, 2500);
           return;
         case 403:
-          setFeedBack("Parola Incorecta");
-          setTimeout(() => {
-            setFeedBack("Introdu un Numar de Imatriculare");
-          }, 2500);
+          setLoginFeedBack("Parola Incorecta");
           return;
         case 409:
+          setShowLogin(false);
           setFeedBack("Numarul deja se afla in baza de date");
           setTimeout(() => {
             setFeedBack("Introdu un Numar de Imatriculare");
           }, 2500);
           return;
         case 422:
+          setShowLogin(false);
           setFeedBack("Numarul nu este Valid");
           setTimeout(() => {
             setFeedBack("Introdu un Numar de Imatriculare");
@@ -126,12 +126,14 @@ function App() {
                 />
                 <button
                   className="button"
+                  style={{ marginLeft: "0px" }}
                   onClick={() => {
                     addToDatabase();
                   }}
                 >
                   Adauga
                 </button>
+                <div className="FeedBack">{LoginFeedBack}</div>
               </div>
             </div>
           </div>
@@ -154,7 +156,8 @@ function App() {
         />
         <div style={{ margin: "10px" }} className="Buttons">
           <button
-            style={{ margin: "10px" }}
+            id="loginAdauga"
+            style={{ margin: "0px" }}
             onClick={() => {
               setShowLogin(true);
             }}
